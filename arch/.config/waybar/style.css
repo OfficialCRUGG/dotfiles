@@ -1,0 +1,273 @@
+@import "./rose-pine.css";
+
+* {
+  all: initial;
+  font-family: "Monaspace Argon", Comfortaa, Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: @text;
+}
+
+window#waybar {
+  background: alpha(@base, 0.5);
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  margin: 10px;
+}
+
+/* all modules */
+#clock,
+#custom-wttrbar,
+#workspaces,
+#wireplumber,
+#memory,
+#cpu,
+#bluetooth,
+#language,
+#window,
+#disk {
+  padding: 0 10px;
+  background-color: @overlay;
+  border: 1px solid @highlightHigh;
+}
+
+/* left */
+#clock,
+#bluetooth {
+  border-radius: 6px 0 0 6px;
+}
+
+/* center */
+#memory,
+#cpu,
+#disk {
+  border-left: none;
+}
+
+/* right */
+#clock.date,
+#wireplumber {
+  border-radius: 0 6px 6px 0;
+  border-left: none;
+  margin-right: 10px;
+}
+
+/* single */
+#custom-wttrbar,
+#workspaces,
+#language,
+#window {
+  margin-right: 10px;
+  border-radius: 6px;
+}
+
+/* gold */
+#clock,
+#cpu {
+  color: @gold;
+}
+
+/* foam */
+#custom-wttrbar,
+#bluetooth {
+  color: @foam;
+}
+
+/* rose */
+#wireplumber {
+  color: @rose;
+}
+
+/* iris */
+#memory {
+  color: @iris;
+}
+
+/* love */
+#disk {
+  color: @love;
+}
+
+/* workspaces */
+#workspaces button {
+  padding: 5px 10px 0 10px;
+  border-right: 1px solid @highlightHigh;
+  transition: all 0.2s linear;
+}
+
+#workspaces button:last-child {
+  border-right: none;
+  border-radius: 0 6px 6px 0;
+}
+
+#workspaces button:first-child {
+  border-radius: 6px 0 0 6px;
+}
+
+#workspaces button:hover {
+  background-color: @highlightMed;
+}
+
+#workspaces button.active {
+  background-color: alpha(@iris, 0.35);
+  padding: 4px 15px 0 15px;
+}
+
+#workspaces button.urgent {
+  background-color: @love;
+}
+
+/* overrides */
+#workspaces {
+  padding: 0;
+}
+
+#wireplumber {
+  margin-right: 0;
+}
+
+#wireplumber.muted {
+  color: @love;
+}
+
+#language {
+  font-size: 12px;
+  padding-top: 2px;
+  color: @subtle;
+}
+
+#window {
+  font-size: 13px;
+  padding-top: 1px;
+}
+
+/*
+#workspaces button {
+  border-radius: 999px;
+  font-size: 0px;
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#workspaces button.active {
+  background: white;
+  color: black;
+}
+
+#workspaces button.urgent {
+  background-color: #eb5855;
+}
+*/
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#network,
+#backlight,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd {
+}
+
+#custom-media {
+  color: @iris;
+}
+
+#custom-media.custom-spotify {
+  color: @foam;
+}
+
+#custom-media.custom-vlc {
+  color: @goal;
+}
+
+#temperature {
+  background-color: #f0932b;
+}
+
+#temperature.critical {
+  background-color: #eb4d4b;
+}
+
+#tray {
+  background-color: #2980b9;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #eb4d4b;
+}
+
+#idle_inhibitor {
+  background-color: #2d3436;
+}
+
+#idle_inhibitor.activated {
+  background-color: #ecf0f1;
+  color: #2d3436;
+}
+
+#mpd {
+  background-color: #66cc99;
+  color: #2a5c45;
+}
+
+#mpd.disconnected {
+  background-color: #f53c3c;
+}
+
+#mpd.stopped {
+  background-color: #90b1b1;
+}
+
+#mpd.paused {
+  background-color: #51a37a;
+}
+
+#keyboard-state {
+  background: #97e1ad;
+  color: #000000;
+  padding: 0 0px;
+  margin: 0 5px;
+  min-width: 16px;
+}
+
+#keyboard-state > label {
+  padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+  background-color: transparent;
+}

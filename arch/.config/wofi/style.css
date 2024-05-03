@@ -1,0 +1,38 @@
+@import "./rose-pine.css";
+
+* {
+  all: initial;
+  font-family: "Monaspace Argon", Comfortaa, Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #e0def4;
+}
+
+window {
+  background: rgba(25, 23, 36, 0.8);
+  border-radius: 6px;
+  border: 1px solid #524f67;
+}
+
+#input {
+  border-bottom: 1px solid #524f67;
+  padding: 10px 20px;
+}
+
+#input * {
+  margin-right: 10px;
+}
+
+#scroll {
+  padding: 10px 10px;
+}
+
+#entry {
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+#entry:selected {
+  background: rgba(255, 255, 255, 0.2);
+}

@@ -1,0 +1,97 @@
+{
+  "layer": "top",
+  "position": "top", // (top|bottom|left|right)
+  "height": 45,
+  "spacing": 0, // Gaps between modules (4px)
+
+  // Modules
+  "modules-left": [
+    "clock",
+    "clock#date",
+    "custom/wttrbar",
+    "hyprland/workspaces"
+  ],
+  "modules-center": ["custom/media"],
+  "modules-right": [
+    "hyprland/window",
+    "hyprland/language",
+    "bluetooth",
+    "disk",
+    "cpu",
+    "memory",
+    "wireplumber"
+  ],
+
+  // Left
+  "clock": {
+    "interval": "10",
+    "format": " {:%H:%M}"
+  },
+  "clock#date": {
+    "interval": "60",
+    "format": "󰃭 {:%d.%m}"
+  },
+  "custom/wttrbar": {
+    "format": "{} °",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --date-format '%d.%m.%Y'",
+    "return-type": "json"
+  },
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "enable-bar-scroll": true,
+    "format": "{name}"
+  },
+
+  // Center
+  "custom/media": {
+    "format": "{icon}  {}",
+    "return-type": "json",
+    "max-length": 40,
+    "format-icons": {
+      "spotify": "󰓇",
+      "default": "🎜"
+    },
+    "escape": true,
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+  },
+
+  // Right
+  "hyprland/window": {
+    "format": "{class}",
+    "rewrite": {
+      "Code": "vscode",
+      "Spotify": "spotify",
+      "": "⸜( ´ ꒳ ` )⸝"
+    }
+  },
+  "hyprland/language": {
+    "format-de": "DE"
+  },
+  "bluetooth": {
+    "format": " {num_connections}"
+  },
+  "disk": {
+    "interval": 30,
+    "format": "󰉉 {percentage_used}%",
+    "path": "/"
+  },
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": false
+  },
+  "memory": {
+    "format": " {}%",
+    "tooltip": false
+  },
+  "wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 0%",
+    "format-icons": ["󰕿", "󰖀", "󰕾"],
+    "on-click": "wireplumber-settings"
+  }
+}
