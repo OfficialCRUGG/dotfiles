@@ -1,5 +1,5 @@
 # general
-ctrl - q : ~/scripts/launch-kitty.sh
+ctrl - q : ~/scripts/launch-kitty
 # ctrl - c : skhd -k "cmd - q"
 ctrl - v : yabai -m window --toggle float
 
