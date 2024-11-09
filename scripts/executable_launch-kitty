@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Check if kitty is running
 if pgrep -x "kitty" > /dev/null

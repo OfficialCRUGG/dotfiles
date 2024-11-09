@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+if [ -z "$1" ]; then
+  echo "Usage: purge-history <search>"
+
+  exit 1
+fi
+
+HISTFILE="${HISTFILE:-$HOME/.zsh_history}"
+
+if [ ! -f "$HISTFILE" ]; then
+  echo "History file not found"
+  exit 1
+fi
+
+export LC_CTYPE=C
+
+sed -i '' "/$1/d" "$HISTFILE"

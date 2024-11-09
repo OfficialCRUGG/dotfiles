@@ -1,0 +1,24 @@
+#!/bin/zsh
+
+# @raycast.schemaVersion 1
+# @raycast.title Cleanup
+# @raycast.mode silent
+
+# @raycast.author CRUGG
+# @raycast.authorURL https://raycast.com/crg
+
+echo "Purging command line history"
+
+purge-history "yt-dlp"
+purge-history "youtube."
+purge-history "purge-history"
+
+echo "Emptying trash..."
+
+rm -rf ~/.Trash/*
+
+echo "Deleting clipboard history..."
+
+skhd -k "ctrl-h"; sleep 0.3; skhd -k "ctrl+shift-x"; skhd -k "return"; sleep 1; skhd -k "escape"
+
+zsh
