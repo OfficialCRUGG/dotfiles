@@ -1,5 +1,5 @@
 # Path
-export PATH=/opt/homebrew/sbin:$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$HOME/.yarn/bin::/Users/crugg/.spicetify:$PATH
+export PATH=/opt/homebrew/sbin:$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$HOME/.yarn/bin:/Users/crugg/scripts:$PATH
 
 # ZSH
 export ZSH="/Users/crugg/.oh-my-zsh"
@@ -30,6 +30,10 @@ alias python="python3"
 alias yay="pacaptr"
 
 alias ssh="TERM=xterm-256color ssh"
+
+alias nano="nvim" # My muscle memory is still used to typing nano.
+alias vim="nvim"
+alias vi="nvim"
 
 # pnpm
 export PNPM_HOME="/Users/crugg/Library/pnpm"
