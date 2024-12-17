@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+# @raycast.schemaVersion 1
+# @raycast.title Sort Clipboard
+# @raycast.mode silent
+
+# @raycast.author CRUGG
+# @raycast.authorURL https://raycast.com/crg
+
+# Check for pbpaste and pbcopy
+if ! command -v pbpaste &> /dev/null || ! command -v pbcopy &> /dev/null; then
+    echo "Error: pbpaste and pbcopy are required but not installed."
+    exit 1
+fi
+
+pbpaste | sort | pbcopy
+
+echo "Successfully sorted clipboard content."
